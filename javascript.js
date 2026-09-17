@@ -10,19 +10,35 @@ If the choice variable is between 0, print 'rock'
 If the choice variable is between 1, print 'paper'
 If the choice variable is between 2, print 'scissors'
 Otherwise print the number // This is to catch any unforseen errors
-
 */
 
 function getComputerChoice() {
-    let choice = Math.floor(Math.random() * 3);
-    console.log(choice);
-    if (choice === 0) {
-        console.log('Rock');
-    } else if (choice === 1) {
-        console.log('Paper');
-    } else if (choice === 2) {
-        console.log('Scissors');
+    let computerChoice = Math.floor(Math.random() * 3);
+    console.log(computerChoice);
+    if (computerChoice === 0) {
+        return 'Rock';
+    } else if (computerChoice === 1) {
+        return 'Paper';
+    } else if (computerChoice === 2) {
+        return 'Scissors';
     }
 }
 
-getComputerChoice();
+console.log(getComputerChoice());
+
+/*
+Pseudocode:
+-- Write a function that takes the user choice and returns it --
+
+Ask the user to write their choice
+Provide a space where the user can write their choice
+Return that choice
+*/
+
+function getUserChoice() {
+    let userChoice = prompt("Paper, scissors, rock!");
+    return userChoice;
+}
+
+console.log(getUserChoice());
+
