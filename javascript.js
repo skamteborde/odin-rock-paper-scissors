@@ -16,11 +16,11 @@ Otherwise print the number // This is to catch any unforseen errors
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
     console.log(choice);
-    if (choice = 0) {
+    if (choice === 0) {
         console.log('Rock');
-    } else if (choice = 1) {
+    } else if (choice === 1) {
         console.log('Paper');
-    } else if (choice = 2) {
+    } else if (choice === 2) {
         console.log('Scissors');
     }
 }
