@@ -16,17 +16,18 @@ If the choice variable is between 2, print 'scissors'
 
 function getComputerChoice() {
     let choiceNum = Math.floor(Math.random() * 3);
-    console.log(choiceNum); // Checking the integer associated with the computerChoice
+    //console.log(choiceNum); // Checking the integer associated with the computerChoice
     if (choiceNum === 0) {
+        console.log('Computer: Rock');
         return 'rock';
     } else if (choiceNum === 1) {
+        console.log('Computer: Paper');
         return 'paper';
     } else if (choiceNum === 2) {
+        console.log('Computer: Scissors');
         return 'scissors';
     }
 }
-
-console.log(getComputerChoice());
 
 /*
 -- Write a function that takes the user choice and returns it --
@@ -38,10 +39,9 @@ Return that choice
 
 function getHumanChoice() {
     let choicePrompt = prompt("Paper, scissors, rock!");
-    return choicePrompt.toLowerCase;
+    console.log('Human: ' + choicePrompt);
+    return choicePrompt
 }
-
-let humanChoose = getHumanChoice();
 
 /*
 -- Write a function that takes the human and computer player choices as arguments, 
@@ -68,20 +68,20 @@ playRound function logs a string value into the console representing the round w
 Increments the humanScore or computerScore variable based on the round winner
 */
 
-function playRound(human, computer) {
-
-    let humanChoice = humanChoose;
-    let computerChoice = getComputerChoice();
-    
-    if (humanChoice === computerChoice) {
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice.toLowerCase() === computerChoice) {
         console.log("It's a tie!");
-    } else if (((humanChoice = 'rock') && (computerChoice = 'scissors'))
-    || ((humanChoice = 'paper') && (computerChoice = 'rock'))
-    || ((humanChoice = 'scissors') && (computerChoice = 'paper'))) {
+    } else if (
+       ((humanChoice.toLowerCase() == 'rock') && (computerChoice == 'scissors'))
+    || ((humanChoice.toLowerCase() == 'paper') && (computerChoice == 'rock'))
+    || ((humanChoice.toLowerCase() == 'scissors') && (computerChoice == 'paper'))) {
         console.log("You win!");
     } else {
         console.log("You lose!");
     }
 }
 
-playRound();
+const humanSelection = getHumanChoice(); // Returning inputs
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection); // Calling the function with the new inputs.
